@@ -33,12 +33,12 @@ public class Assignment2 extends IRobotAdapter {
 	private boolean loop() throws Exception{
 		//LOOP CODE GOES HERE!!!!!
 		readSensors(100);
-		 driveDirect(1000,1000);
+		 driveDirect(500,500);
 		int[] lightBumpReadings = getLightBumps();
         
          
          if(lightBumpReadings[0] > 0){
- 			driveDirect(300, -200);
+ 			driveDirect(300, -100);
  			sleep(25);
  		
  		}else if(lightBumpReadings[1] > 0){
@@ -46,12 +46,16 @@ public class Assignment2 extends IRobotAdapter {
  			sleep(25);
  		
  		}else if(lightBumpReadings[2] > 0){
+ 			driveDirect(-100, -100);
+ 			sleep(100);
  			driveDirect(-500,500);
- 			sleep(500);
+ 			sleep(250);
  		}
  		else if(lightBumpReadings[3] > 0){
+ 			driveDirect(-100, -100);
+ 			sleep(100);
  			driveDirect(-500,500);
- 			sleep(500);
+ 			sleep(250);
  		}
  		else if(lightBumpReadings[4] > 0){
  			driveDirect(-200, 300);
@@ -63,15 +67,14 @@ public class Assignment2 extends IRobotAdapter {
  	 			sleep(25);
  		}
  	    
-         if(isBumpLeft() || isBumpRight()){
- 			driveDirect(-100, -100);
- 			sleep(500);
+         if(isBumpLeft()){ 
  			driveDirect(-500, 500);
- 			sleep(3000);
- 			driveDirect(0, 0);
- 			
- 			return false;
+ 			sleep(250);
  		}
+         if(isBumpRight()){
+        	 driveDirect(500,-500);
+        	 sleep(250);
+         }
 
 		return true;
 	}
