@@ -7,7 +7,7 @@ import org.jointheleague.ecolban.rpirobot.IRobotInterface;
 import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
 public class Assignment2 extends IRobotAdapter {
-	Sonar sonar = new Sonar();
+	//Sonar sonar = new Sonar();
 	
 	public Assignment2(IRobotInterface iRobot) {
 		super(iRobot);
@@ -38,7 +38,7 @@ public class Assignment2 extends IRobotAdapter {
         
          
          if(lightBumpReadings[0] > 0){
- 			driveDirect(300, -100);
+ 			driveDirect(250, -100);
  			sleep(25);
  		
  		}else if(lightBumpReadings[1] > 0){
@@ -63,7 +63,7 @@ public class Assignment2 extends IRobotAdapter {
  		}
  		
  		else if(lightBumpReadings[5] > 0){
- 	 			driveDirect(-200, 300);
+ 	 			driveDirect(-100, 250);
  	 			sleep(25);
  		}
  	    
